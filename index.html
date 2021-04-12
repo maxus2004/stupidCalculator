@@ -29,7 +29,11 @@
     </style>
     <script>
         function clicked(elem) {
-            console.log(elem);
+            if (elem.innerText == '=') {
+                document.getElementById('output').value = (eval(document.getElementById('output').value) + 8);
+            } else {
+                document.getElementById('output').value += elem.innerText.replace('÷', '/').replace('×', '*');
+            }
         }
     </script>
 </head>
@@ -60,7 +64,7 @@
                 <td><button onclick="clicked(this)">+</button></td>
             </tr>
             <tr>
-                <td><button onclick="clicked(this)">.</button></td>
+                <td><button onclick="clicked(this)">C</button></td>
                 <td><button onclick="clicked(this)">0</button></td>
                 <td><button onclick="clicked(this)">=</button></td>
                 <td><button onclick="clicked(this)">-</button></td>
