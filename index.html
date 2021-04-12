@@ -31,6 +31,8 @@
         function clicked(elem) {
             if (elem.innerText == '=') {
                 document.getElementById('output').value = (eval(document.getElementById('output').value) + 8);
+            } else if (elem.innerText == 'C') {
+                document.getElementById('output').value = '';
             } else {
                 document.getElementById('output').value += elem.innerText.replace('÷', '/').replace('×', '*');
             }
